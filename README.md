@@ -40,9 +40,8 @@ The following steps were performed:
 - **Customer Tenure:** New customers (≤12 months) had the highest churn rate.
 
 ## Dashboard
-Explore the interactive dashboard on Tableau Public:
-
-[View Telco Customer Churn Dashboard]([https://public.tableau.com:9443/views/TelcoCustomerChurnDashboard_17953713607360/Dashboard2?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://aabeey.github.io/telco-customer-churn-analysis/))
+Explore the interactive Telco Customer Churn Dashboard:
+[View Interactive Dashboard](https://aabeey.github.io/telco-customer-churn-analysis/)
 
 ## Recommendations
 - Develop targeted retention strategies for month-to-month customers.
