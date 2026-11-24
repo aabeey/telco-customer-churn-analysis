@@ -1,9 +1,10 @@
 # Telco Customer Churn Analysis
 
 ## Project Overview
+This project analyzes customer churn behavior in a telecommunications company using Tableau. The analysis aims to identify customer segments with higher churn rates and understand the factors associated with customer retention.
+
 ## Dashboard Preview
 ![Telco Customer Churn Dashboard](images/dashboard-preview.png)
-This project analyzes customer churn behavior in a telecommunications company using Tableau. The analysis aims to identify customer segments with higher churn rates and understand the factors associated with customer retention.
 
 ## Business Problem
 Customer churn is a major challenge for telecommunications companies because losing customers can affect revenue and long-term business growth.
