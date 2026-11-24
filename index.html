@@ -63,20 +63,34 @@
     <script>
         const dashboard = document.getElementById("dashboard-scale");
 
+        let screenWidth = window.innerWidth;
+        let screenHeight = window.innerHeight;
+
         function fitDashboard() {
-            const scaleX = window.innerWidth / 1600;
-            const scaleY = window.innerHeight / 900;
+            const scaleX = screenWidth / 1600;
+            const scaleY = screenHeight / 900;
 
             const scale = Math.min(scaleX, scaleY);
 
             const scaledWidth = 1600 * scale;
-            const left = (window.innerWidth - scaledWidth) / 2;
+            const left = (screenWidth - scaledWidth) / 2;
 
-            dashboard.style.transform = `translateX(${left}px) scale(${scale})`;
+            dashboard.style.transform =
+                `translateX(${left}px) scale(${scale})`;
         }
 
-        window.addEventListener("resize", fitDashboard);
         fitDashboard();
+
+        window.addEventListener("resize", function () {
+            if (
+                window.innerWidth !== screenWidth ||
+                window.innerHeight !== screenHeight
+            ) {
+                screenWidth = window.innerWidth;
+                screenHeight = window.innerHeight;
+                fitDashboard();
+            }
+        });
 
         const divElement = document.getElementById("viz1795540694825");
         const vizElement = divElement.getElementsByTagName("object")[0];
@@ -85,7 +99,8 @@
         vizElement.style.height = "900px";
 
         const scriptElement = document.createElement("script");
-        scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+        scriptElement.src =
+            "https://public.tableau.com/javascripts/api/viz_v1.js";
 
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
