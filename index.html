@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Telco Customer Churn Dashboard</title>
 
     <style>
@@ -16,53 +15,73 @@
 
         html, body {
             width: 100%;
-            min-height: 100%;
-            overflow-x: hidden;
+            height: 100%;
+            overflow: hidden;
         }
 
-        .tableauPlaceholder {
-            width: 100%;
+        #dashboard-wrapper {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
             position: relative;
         }
 
-        .tableauViz {
-            width: 100%;
-            height: 927px;
+        #dashboard-scale {
+            width: 1600px;
+            height: 900px;
+            transform-origin: top left;
+        }
+
+        .tableauPlaceholder {
+            width: 1600px;
+            height: 900px;
+            position: relative;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="tableauPlaceholder" id="viz1795540694825">
-        <object class="tableauViz" style="display:none;">
-            <param name="host_url" value="https://public.tableau.com/" />
-            <param name="embed_code_version" value="3" />
-            <param name="site_root" value="" />
-            <param name="name" value="TelcoCustomerChurnDashboard_17953713607360/TelcoCustomerChurnDashboard" />
-            <param name="tabs" value="no" />
-            <param name="toolbar" value="yes" />
-            <param name="animate_transition" value="yes" />
-            <param name="display_static_image" value="yes" />
-            <param name="display_spinner" value="yes" />
-            <param name="display_overlay" value="yes" />
-            <param name="display_count" value="yes" />
-            <param name="language" value="en-US" />
-        </object>
+<div id="dashboard-wrapper">
+    <div id="dashboard-scale">
+        <div class="tableauPlaceholder" id="viz1795540694825">
+            <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https://public.tableau.com/" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="TelcoCustomerChurnDashboard_17953713607360/TelcoCustomerChurnDashboard" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="language" value="en-US" />
+            </object>
+        </div>
     </div>
+</div>
 
-    <script type="text/javascript">
-        var divElement = document.getElementById("viz1795540694825");
-        var vizElement = divElement.getElementsByTagName("object")[0];
+<script>
+    const dashboard = document.getElementById("dashboard-scale");
 
-        vizElement.style.width = "100%";
-        vizElement.style.height = "927px";
+    function fitDashboard() {
+        const scaleX = window.innerWidth / 1600;
+        const scaleY = window.innerHeight / 900;
+        const scale = Math.min(scaleX, scaleY);
 
-        var scriptElement = document.createElement("script");
-        scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+        dashboard.style.transform = `scale(${scale})`;
+    }
 
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
+    window.addEventListener("resize", fitDashboard);
+    fitDashboard();
+
+    const divElement = document.getElementById("viz1795540694825");
+    const vizElement = divElement.getElementsByTagName("object")[0];
+
+    vizElement.style.width = "1600px";
+    vizElement.style.height = "900px";
+
+    const scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
 
 </body>
 </html>
