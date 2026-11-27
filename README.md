@@ -48,7 +48,3 @@ Explore the interactive Telco Customer Churn Dashboard:
 - Improve onboarding experiences for new customers.
 - Identify potential churn risks early and provide appropriate retention offers.
 
----
-
-**Project Type:** Data Analytics Portfolio Project  
-**Role:** Data Analyst (Personal Project)
